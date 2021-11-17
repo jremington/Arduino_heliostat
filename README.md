@@ -8,16 +8,18 @@ The Arduino portion of the project consists of a serial link command intepreter 
 Construction:
 1. The azimuth ring is a mixture of custom and home made parts. The basic mechanism is a modified pan platform from Servocity: https://www.servocity.com/gear-drive-pan-kit-for-37mm-spur-gear-motor/  However, instead of the D.C. motor drive, I fitted a 28BYJ-48 stepper with a spur gear chosen for 5.25:1 reduction, so the azimuth resolution is 10698.9 steps/revolution
 
-2. Mirror normal positioning (altitude): This is direct drive, using a 1000 step/revolution five phase motor, with a custom made mirror mount. Driven in half-step mode 2000 steps/revolution can be achieved. Azimuth positioning of the mirror normal is thus accurate to (+/- 0.18)/2 degrees.
+2. Mirror normal positioning (altitude): This is direct drive, using a 1000 step/revolution five phase motor, with a custom made mirror mount. Driven in half-step mode 2000 steps/revolution can be achieved. Azimuth positioning of the mirror normal is thus accurate to (+/- 0.18)/2 degrees. For information on construction of the five phase driver and corresponding code, see https://github.com/jremington/Five-phase-stepper-driver
 
-3. Command interpreter:
+3. Power supplies: Arduino is USB powered from laptop, using an FTDI serial-USB converter. Motors are powered by a 5V 2A power brick.
+
+4. Command interpreter:
 This part of the code accepts serial port commands from a laptop to initialize the stepper motors, set the zero position, drive the steppers to desired altitude/azimuth coordinates, and can be used for two different continuous tracking options. The suntracking option is similar to telescope positioning, as it automatically aligns the platform to track the sun position across the sky. The heliostat option allows one to position the mirror so that sunlight is reflected in a desired altitude/azimuth direction, then automatically positions the mirror to keep sunlight focused on that spot as the sun moves across the sky.
 
-For the above two options to work properly, the platform must be accurately leveled and aligned so that azimuth zero corresponds to true North.
+For the above two options to work properly, **the platform must be accurately leveled and aligned so that azimuth zero corresponds to true North**.
 
-Serial commands: 
+Serial commands: Sent to the Arduino from a laptop running Teraterm version 105, which also logs performance data.
 
-General format CC NNNN where CC is one or two ASCII characters, NNNN is an character string, integer or float constant.
+General format CC NNNN where CC is one or two lower case ASCII characters, NNNN is an character string, integer or float constant.
 Commands:
 t hh:mm   input local time in hours and minutes (colon required)
 d dd/mm   set current UTC date (slash required)
