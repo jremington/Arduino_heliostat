@@ -10,7 +10,7 @@ void altaz_to_xyz(float alt, float az, float xyz[3]) {
   *xyz = sin(alt * dtr);
 }
 //
-// converte unit vector xyz (y North, x East, Z up) to (alt, az) in degrees
+// convert unit vector xyz (y North, x East, Z up) to (alt, az) in degrees
 //
 void xyz_to_altaz(float * alt, float * az, float xyz[3]) {
   float rtd = 180.0 / PI;
