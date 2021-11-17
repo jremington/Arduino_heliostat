@@ -8,7 +8,7 @@ The Arduino portion of the project consists of a serial link command intepreter 
 Construction:
 1. The azimuth ring is a mixture of custom and home made parts. The basic mechanism is a modified pan platform from Servocity: https://www.servocity.com/gear-drive-pan-kit-for-37mm-spur-gear-motor/  However, instead of the D.C. motor drive, I fitted a 28BYJ-48 stepper with a spur gear chosen for 5.25:1 reduction, so the azimuth resolution is 10698.9 steps/revolution
 
-2. Mirror normal positioning (altitude): This is direct drive, using a 1000 step/revolution five phase Vexta PX33M-A-C6 0.21A, 33 Ohms per phase, 0.36 degrees/step, (ten wires) with a custom made mirror mount. Driven in half-step mode 2000 steps/revolution can be achieved. Azimuth positioning of the mirror normal is thus accurate to (+/- 0.18)/2 degrees. For information on construction of the five phase driver and corresponding code, see https://github.com/jremington/Five-phase-stepper-drivert
+2. Mirror normal positioning (altitude): This is direct drive, using a 1000 step/revolution five phase Vexta PX33M-A-C6 0.21A, 33 Ohms per phase, 0.36 degrees/step, (ten wires) with a custom made mirror mount. Driven in half-step mode 2000 steps/revolution can be achieved. Azimuth positioning of the mirror normal is thus accurate to (+/- 0.18)/2 degrees. For information on construction of the five phase driver and corresponding code, see https://github.com/jremington/Five-phase-stepper-driver
 
 3. Power supplies: Arduino Pro Mini is USB powered from laptop, using an FTDI serial-USB converter. Motors are powered by a 5V 2A power brick.
 
