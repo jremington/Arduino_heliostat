@@ -33,7 +33,7 @@ Commands:
 6. sz NNNN   (set) reset azimuth origin and define current azimuth position to be NNNN (degrees, floating point)
 7. ma NNNN   (move) orient altitude of platform to be NNNN (degrees floating point)
 8. mz NNNN   (move) orient azimuth of platform to be NNNN (degrees floating point)
-9. a         (autotrack) track sun in heliostat mode from this point forward. 
+9. a         (autotrack) track sun in heliostat mode from this point in time forward. 
 
 Note Telescope tracking is possible, by activating two lines of code and disabling the heliostat code
               // sun tracking
