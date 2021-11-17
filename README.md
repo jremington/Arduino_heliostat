@@ -18,7 +18,7 @@ Construction:
 
 This part of the code accepts serial port commands from a laptop to initialize the stepper motors, set the zero position, drive the steppers to desired altitude/azimuth coordinates, and can be used for two different continuous tracking options. The suntracking option is similar to telescope positioning, as it automatically aligns the platform to track the sun position across the sky. The heliostat option allows one to position the mirror so that sunlight is reflected in a desired altitude/azimuth direction, then automatically positions the mirror to keep sunlight focused on that spot as the sun moves across the sky.
 
-For the above two options to work properly, **the platform must be accurately leveled and aligned so that azimuth zero corresponds to true North**.
+For the above two options to work properly, **the platform must be accurately leveled and aligned so that azimuth zero corresponds to true North, altitude zero is perfectly horizontal**.
 
 Serial commands: Sent to the Arduino from a laptop running Teraterm version 105, which also logs performance data.
 
