@@ -186,9 +186,14 @@ void loop() {
       f_arg = atof(&cmdBuffer[2]); //ignore two leading alpha characters, get first argument
       n_arg = f_arg;
       OK = 0; //reset command OK flag
+
+      // COMMAND DECODER
+      
       //
-      // t hh:mm  input local time, convert to UTC or print local time
+      // t hh:mm  input local time, convert to UTC and print updated local time
+      // t (no argument) print current local time
       //
+      
       if (cmdBuffer[0] == 't') {
         char * pch = strchr(cmdBuffer, ':');
         if (pch != NULL) { //got an expected delimiter
@@ -208,7 +213,7 @@ void loop() {
       }  //end t hh:mm
 
       //
-      // d mm/dd  input UTC date
+      // d mm/dd  input UTC date (slash required)
       //
       if (cmdBuffer[0] == 'd') {
         char * pch = strchr(cmdBuffer, '/');
@@ -223,7 +228,8 @@ void loop() {
       } //end d dd/mm
 
       //
-      // ja, jz  -> jog alt, az by +/- n_arg steps, for fine positioning
+      // ja  NNNN
+      // jz  NNNN -> jog alt or az by (+/-)NNNN steps, for fine positioning
       //
       if (cmdBuffer[0] == 'j') {
 
@@ -277,7 +283,8 @@ void loop() {
       } //end set a/z command
 
       //
-      // ma, mz move to position alt, az (relative to step origin).
+      // ma NN.NN, mz NN.NN move to position alt, az in degrees (floating point)
+      // checks for disallowed angles, installation specific
       //
       if (cmdBuffer[0] == 'm') {
 
@@ -295,7 +302,8 @@ void loop() {
 
       //
       // 'a' Track sun from now
-      // update alt,az every minute
+      // update alt,az every minute, set state to TRACKING, to execute platform motions
+      // any character on serial input terminates tracking
       //
 
       if (cmdBuffer[0] == 'a') {
@@ -352,10 +360,14 @@ void loop() {
 
         Serial.println(F("\nTracking..."));
         state = TRACKING;
+        
+        // flush serial input buffer
+        while (Serial.available() > 0) Serial.read();
         start_time_ms = millis();
-        OK = 1;
+        OK = 1;  //no input error
       }
-
+      
+     // Command Error
       if (!OK) { //command not understood
         Serial.print("?> ");
         Serial.println(cmdBuffer);
@@ -367,6 +379,10 @@ void loop() {
   }  //end if serial.available()
 
 } //end loop()
+
+
+// USEFUL FUNCTIONS
+
 //
 // form unit vector from v[]
 //
