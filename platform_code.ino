@@ -110,7 +110,7 @@ void loop() {
   static char cmdBuffer[20];  //serial command input buffer
   static byte cmdIndex = 0;
   static unsigned long start_time_ms = 0;
-  static unsigned int state = INPUT;
+  static unsigned int state = CMD_INPUT;
   static float salt, saz, nalt, naz, talt, taz;
 
   float Sxyz[3], Nxyz[3], Txyz[3]; //mirror tracking vectors, sun, mirror normal, target
