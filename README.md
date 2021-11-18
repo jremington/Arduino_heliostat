@@ -3,7 +3,7 @@ Model alt/az heliostat using Arduino
 
 This is a complete, functioning model of a heliostat, typically used to position one mirror of a solar concentrator. The model uses a home made alt/az mount, with geared stepper motor driver for the azimuth setting, and a high resolution, 2000 step per revolution five phase motor as direct drive for the mirror altitude.
 
-The Arduino portion of the project consists of a serial link command intepreter to align the device, the Arduino SolarPosition library to calculate the sun position at my geographic location, and TimeLib.h to keep track of the UTC and local time.
+The Arduino portion of the project consists of a serial link command intepreter to align the device, the Arduino SolarPosition library to calculate the sun position at any geographic location, and TimeLib.h to keep track of the UTC and local time.
 
 Construction:
 1. The azimuth ring is a mixture of commercial and home made parts. The basic mechanism is a modified pan platform from Servocity: https://www.servocity.com/gear-drive-pan-kit-for-37mm-spur-gear-motor/  However, instead of the D.C. motor drive, I fitted a 28BYJ-48 stepper with a spur gear chosen for 5.25:1 reduction, so the azimuth resolution is 10698.9 steps/revolution.  Backlash movements are included in the azimuth stepper code.
