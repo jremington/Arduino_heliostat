@@ -9,7 +9,7 @@ Method of operation:
 
 The basic mechanism consists of an alt/azimuth drive that can accurately point to a given angle, i.e. a telescope mount. To create a heliostat, the mirror needs to be positioned according to the Law of Reflection: the vector perpendicular to the mirror surface must bisect the angles to the sun and to the target. Once the device is oriented so that azimuth zero points to True North and altitude zero is perfectly horizontal, the sun angle can be calculated for any time of day at any point on the Earth's surface.
 
-What remains to be determined is the angle to the target, but that is trivial: the mirror is simply positioned "by hand" via serial commands, so that the sun is reflected onto the target. From this point on, the mirror can be automatically adjusted to track the sun as accurately as desired.
+What remains to be determined is the angle to the target, but that is trivial: the mirror is simply positioned "by hand" via serial commands, so that sunlight is reflected onto the target. Since the sun angle is known, one can back-calculate from the mirror position to determine the angle to the target. From this point on, the mirror can be automatically adjusted to track the sun as accurately as desired.
 
 Here I make use of the Arduino SolarPosition and TimeLib libraries to track the sun. The only remaining data required is to set the correct geographic location and time of day.
 
