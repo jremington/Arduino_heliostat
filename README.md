@@ -46,9 +46,11 @@ Commands:
 9. **a**         (autotrack) track sun in heliostat mode from this point in time forward. 
 
 Note Telescope tracking is possible, by activating two lines of code and disabling the heliostat code
-              // sun tracking
-              //      move_to_altitude(home.getSolarElevation(t_now));
-              //      move_to_azimuth(home.getSolarAzimuth(t_now));
+
+// sun tracking
+//      move_to_altitude(home.getSolarElevation(t_now));
+//      move_to_azimuth(home.getSolarAzimuth(t_now));
+
 
 
 ![IMG_1333](https://user-images.githubusercontent.com/5509037/142272758-720977f1-b27b-418c-a9b5-af44a58f26bb.JPG)
