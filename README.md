@@ -35,14 +35,14 @@ Serial commands: Sent to the Arduino from a laptop running Teraterm version 105,
 General format CC NNNN where CC is one or two lower case ASCII characters, NNNN is an character string, integer or float constant.
 
 Commands:
-1. **t hh:mm**   input local time in hours and minutes (colon required) Conversion from time zone to UTC done internally
+1. **t hh:mm**   input **local** time in hours and minutes (colon required) Conversion from time zone to UTC done internally
 2. **d dd/mm**   set current **UTC date** (slash required). The present year is initialized in the source code.
 3. **ja NNNN**   jog altitude stepper by NNNN integer steps. NNNN may be preceded by a minus sign
 4. **jz NNNN**   jog azimuth stepper  by NNNN integer steps. NNNN may be preceded by a minus sign
 5. **sa NNN.NN**   (set) reset altitude origin and define current altitude position to be NN.NN (degrees, floating point)
 6. **sz NNN.NN**   (set) reset azimuth origin and define current azimuth position to be NN.NN (degrees, floating point)
-7. **ma NNN.NN**   (move) orient altitude of platform to be NN.NN (degrees floating point)
-8. **mz NNN.NN**   (move) orient azimuth of platform to be NN.NN (degrees floating point)
+7. **ma NNN.NN**   (move) orient altitude of platform to be NNN.NN (degrees floating point)
+8. **mz NNN.NN**   (move) orient azimuth of platform to be NNN.NN (degrees floating point)
 9. **a**         (autotrack) track sun in heliostat mode from this point in time forward. 
 
 Note Telescope tracking is possible, by activating the following two lines of code and disabling the heliostat code
