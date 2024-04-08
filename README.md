@@ -17,7 +17,7 @@ Here I make use of the Arduino SolarPosition and TimeLib libraries to track the 
 
 Construction:
 
-1. The azimuth ring is a mixture of commercial and home made parts. The basic mechanism is a modified pan platform from Servocity: https://www.servocity.com/gear-drive-pan-kit-for-37mm-spur-gear-motor/  However, instead of the D.C. motor drive, I fitted a 28BYJ-48 stepper with a spur gear chosen for 5.25:1 reduction, so the azimuth resolution is 10698.9 steps/revolution.  Movement to correct for gear backlash are included in the azimuth stepper code.
+1. The azimuth ring is a mixture of commercial and home made parts. The basic mechanism is a modified pan platform from Servocity: https://www.servocity.com/gear-drive-pan-kit-for-37mm-spur-gear-motor/  However, instead of the D.C. motor drive, I fitted a 28BYJ-48 stepper with a spur gear chosen for 5.25:1 reduction, so the azimuth resolution is 10698.9 steps/revolution.  Movements to correct for gear backlash are included in the azimuth stepper code.
 
 2. Mirror normal positioning (altitude): This is direct drive, using a 1000 step/revolution five phase Vexta PX33M-A-C6 0.21A, 33 Ohms per phase, 0.36 degrees/step, (ten wires) with a custom made mirror mount. Driven in half-step mode 2000 steps/revolution can be achieved. Azimuth positioning of the mirror normal is thus accurate to (+/- 0.18)/2 degrees. For information on construction of the five phase driver and corresponding code, see https://github.com/jremington/Five-phase-stepper-driver
 The mirror mount was machined to align the mirror surface (front surfaced mirror) with the rotation axis of the stepper motor.
