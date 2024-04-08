@@ -1,7 +1,9 @@
 # Arduino_heliostat
 Model alt/az heliostat using Arduino
 
-This is a complete, functioning model of a heliostat, typically used to position one mirror of a solar concentrator. The model uses a home made alt/az mount, with geared stepper motor driver for the azimuth setting, and a high resolution, 2000 step per revolution five phase motor as direct drive for the mirror altitude.
+This is a complete, functioning model of a heliostat, typically used to position one mirror of a solar concentrator. The mirror is continuously adjusted according to the geographic location and time of day, so that the sun's rays are always focused on a fixed spot.
+
+The model uses a home made alt/az mount, with geared stepper motor driver for the azimuth setting, and a high resolution, 2000 step per revolution five phase motor as direct drive for the mirror altitude.
 
 The Arduino portion of the project consists of a serial link command intepreter to align the device, the Arduino SolarPosition library to calculate the sun position at any geographic location and UTC time, and TimeLib.h to keep track of the UTC and local time.
 
